@@ -1,0 +1,31 @@
+{
+  "name": "searchparams",
+  "version": "1.0.0",
+  "description": "lightweight URLSearchParams interface",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/index.js",
+    "start": "tsc && node repl.js",
+    "prepare": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zakwht/searchparams.git"
+  },
+  "keywords": [
+    "URLSearchParams",
+    "url",
+    "querystring",
+    "search"
+  ],
+  "author": "Zak White",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zakwht/searchparams/issues"
+  },
+  "homepage": "https://github.com/zakwht/searchparams#readme"
+}
