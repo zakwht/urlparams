@@ -8,51 +8,65 @@
 A lightweight TypeScript wrapper for the URLSearchParams interface, for easy compatibility with strings and Objects for search query parameters.
 
 ### Usage
+
 ```shell
 $ npm install urlparams-ts
 ```
-Create an instance of `URLParams` by supplying a query string, an object with primitive values, or a URL. If no argument is provided, the constructor will use the current URL from `window.location`. 
+
+Create an instance of `URLParams` by supplying a query string, an object with primitive values, or a URL. If no argument is provided, the constructor will use the current URL from `window.location`.
 
 ```typescript
-import { URLParams } from "urlparams-ts"
+import { URLParams } from "urlparams-ts";
 // from string
-let params = new URLParams("?text=abc&bool=false")
+let params = new URLParams("?text=abc&bool=false");
 // from object
 params = new URLParams({
   text: "abc",
   bool: false
-})
+});
 // from URL
-params = new URLParams("https://github.com?text=abc&bool=false#latest")
+params = new URLParams("https://github.com?text=abc&bool=false#latest");
 // no parameter: use window.location
-params = new URLParams()
+params = new URLParams();
 ```
 
 The API of `URLParams` is
-* `toURLSearchParams()` ⇒ `URLSearchParams`
-* `toObject()` ⇒ `Object`
-* `toString()` ⇒ `string`
-* `toCastedObject` ⇒ `Object`
-  * Object with values casted as numbers or booleans where applicable
 
+- `toURLSearchParams()` ⇒ `URLSearchParams`
+- `toObject()` ⇒ `Object`
+- `toString()` ⇒ `string`
+- `toCastedObject` ⇒ `Object`
+  - Object with values casted as numbers or booleans where applicable
 
 ```typescript
 let params = new URLParams({
   text: "abc",
-  bool: false,
-  num: 10,
+  bool: "false",
+  num: "10",
   nothing: undefined
-})
+});
 
-params.toString()
+params.toString();
 // 'text=abc&bool=false&num=10'
-params.toURLSearchParams()
+params.toURLSearchParams();
 // URLSearchParams { 'text' => 'abc', ... }
-params.toCastedObject()
+params.toObject();
+// { text: 'abc', bool: 'false', num: '10' }
+params.toCastedObject();
 // { text: 'abc', bool: false, num: 10 }
 ```
 
+### Advantages
 
-### Acknowledgments
-- __Hosted on__ [GitHub](https://github.com)
+- Parameter casting with `toCastedObject()`
+- When supplying an Object to the constructor, all parameters with null, undefined, or an empty string as values (extraneous keys) are removed
+- Reduces written code length
 
+```typescript
+/// before
+const params = new URLSearchParams(window.location.search);
+const obj = Object.fromEntries(params);
+// after
+const params = new URLParams();
+const obj = params.toObject();
+```
