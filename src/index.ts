@@ -32,7 +32,7 @@ export class URLParams {
     else this.params = new URLSearchParams(search.split("?")[1] || search);
   }
 
-  toURLParams = () => this.params;
+  toURLSearchParams = () => this.params;
 
   toObject = () => Object.fromEntries(this.params);
 
