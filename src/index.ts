@@ -7,7 +7,7 @@ const castStr = (s: string): string | boolean | number => {
 
 const definedObj = (o: Record<string, any>): Record<string, any> => {
   Object.entries(o).forEach(([k, v]) => {
-    if (!v && v !== 0) delete o[k];
+    if (v == null || v === "") delete o[k];
   });
   return o;
 };
