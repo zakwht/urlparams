@@ -12,7 +12,7 @@ const definedObj = (o: Record<string, any>): Record<string, any> => {
   return o;
 };
 
-export class URLQuery {
+export class URLParams {
   private params: URLSearchParams;
 
   constructor(search?: string | URLSearchParams | Record<string, any>) {

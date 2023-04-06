@@ -1,2 +1,2 @@
-URLQuery = require("./lib").URLQuery;
+URLParams = require("./lib").URLParams;
 require('repl').start();

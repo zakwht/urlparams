@@ -1,4 +1,4 @@
-const { URLQuery } = require("../lib")
+const { URLParams } = require("../lib")
 const assert = require('assert');
 
 window = { location: { search: "?artist=Tyler, The Creator&album=IGOR&trackNum=10&shuffle=false&replay=true&test=0" } }
@@ -42,7 +42,7 @@ const searches = [
 ]
 
 searches.forEach(s => {
-  const q = new URLQuery(s)
+  const q = new URLParams(s)
   assert(q.toString() === fixtures.toString)
   assert(JSON.stringify(q.toObject()) === JSON.stringify(fixtures.toObject))
   assert(JSON.stringify(q.toURLParams().entries()) === JSON.stringify(fixtures.toURLParams.entries()))
