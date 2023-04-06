@@ -1,8 +1,11 @@
 {
-  "name": "searchparams",
+  "name": "urlparams-ts",
   "version": "1.0.0",
   "description": "lightweight URLSearchParams interface",
   "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "directories": {
     "lib": "lib",
     "test": "test"
