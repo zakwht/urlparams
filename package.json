@@ -1,7 +1,7 @@
 {
   "name": "urlparams-ts",
-  "version": "1.0.2",
-  "description": "lightweight URLSearchParams interface",
+  "version": "1.0.3",
+  "description": "Lightweight URLSearchParams interface",
   "main": "lib/index.js",
   "files": [
     "lib"
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zakwht/searchparams.git"
+    "url": "git+https://github.com/zakwht/urlparams.git"
   },
   "keywords": [
     "URLSearchParams",
@@ -28,7 +28,7 @@
   "author": "Zak White",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zakwht/searchparams/issues"
+    "url": "https://github.com/zakwht/urlparams/issues"
   },
-  "homepage": "https://github.com/zakwht/searchparams#readme"
+  "homepage": "https://github.com/zakwht/urlparams#readme"
 }
