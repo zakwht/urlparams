@@ -20,7 +20,7 @@ export class URLParams {
       if (typeof window === "undefined") throw TypeError("No search query");
       this.params = new URLSearchParams(window.location.search);
     } else if (search instanceof URLSearchParams) this.params = search;
-    else if (search instanceof Object)
+    else if (typeof search === "object")
       this.params = new URLSearchParams(definedObj(search));
     else if (search.includes("?"))
       this.params = new URLSearchParams(
