@@ -32,6 +32,16 @@ export class URLParams {
     else this.params = new URLSearchParams(search.split("?")[1] || search);
   }
 
+  append = (
+    key: string,
+    value: string | number | boolean | Array<string | number | boolean>
+  ) => this.params.append(key, value.toString());
+
+  set = (
+    key: string,
+    value: string | number | boolean | Array<string | number | boolean>
+  ) => this.params.set(key, value.toString());
+
   toURLSearchParams = () => this.params;
 
   toObject = () => Object.fromEntries(this.params);
